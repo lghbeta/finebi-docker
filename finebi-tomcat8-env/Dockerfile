@@ -76,7 +76,8 @@ RUN set -e \
 RUN apt-get update; \
     apt-get install -y --no-install-recommends lsb-release; \
     rm -rf /var/lib/apt/lists/*; \
-    rm -rf /usr/local/tomcat/webapps/*; \
+	rm -f /usr/local/tomcat/webapps/ROOT/favicon.ico; \
+    #rm -rf /usr/local/tomcat/webapps/*; \
     ln -s "$JAVA_HOME"/lib/tools.jar ./lib/tools.jar
 
 EXPOSE 8080
